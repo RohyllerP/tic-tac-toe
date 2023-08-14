@@ -1,0 +1,13 @@
+@import url('colors.css');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Mitr:wght@200;300;400;500;600;700&display=swap');
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Mitr', sans-serif;
+}
+
+body{
+  background-color: var(--body-color);
+  
+}
