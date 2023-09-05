@@ -50,11 +50,11 @@ function encontrarPosicion(id) {
 
 // click componente
 let auxImg = ref(true);
-let imgUrl = ref("../src/assets/img/circulo.svg");
+let imgUrl = ref("../assets/img/circulo.svg");
 watch(auxImg, () => {
   imgUrl.value = auxImg.value
-    ? "../src/assets/img/circulo.svg"
-    : "../src/assets/img/close.svg";
+    ? "../assets/img/circulo.svg"
+    : "../assets/img/close.svg";
 });
 
 let auxVal = ref(true);
@@ -113,7 +113,7 @@ const changeVal = (event) => {
       auxImg.value = !auxImg.value;
       event.target.firstChild.src = imgUrl.value;
       tridimensionArray[posicion[0]][posicion[1]].valor = 1;
-      imgUrl.value == "../src/assets/img/circulo.svg"
+      imgUrl.value == "../assets/img/circulo.svg"
         ? (tridimensionArray[posicion[0]][posicion[1]].valor = 1)
         : (tridimensionArray[posicion[0]][posicion[1]].valor = 2);
     } else {
