@@ -280,7 +280,7 @@ const changeVal = (event) => {
   padding-right: 80px;
   gap: 20px;
   position: relative;
-  top: -35px;
+  top: -50px;
 }
 
 .score {
