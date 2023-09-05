@@ -1,5 +1,4 @@
 <script setup>
-document.title = "Home";
 import ButtonComponent from "@/components/buttons/button-1.vue";
 </script>
 
