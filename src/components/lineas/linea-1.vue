@@ -16,14 +16,14 @@ let firstFirst = reactive([
 // cambiar variables por redimensión
 let lineasFirst = reactive({
   lineaVerticalFirst: {
-    left: "50%",
-    top: "-100px",
-    display: "block",
-    rotate: "90deg",
+    left: "0%",
+    top: "0px",
+    display: "none",
+    rotate: "0deg",
     height: "520px",
     tpTp: false,
     tpBm: false,
-    tpMe: true,
+    tpMe: false,
     ltTp: false,
     ltMe: false, 
     ltBm: false,
