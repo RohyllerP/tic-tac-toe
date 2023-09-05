@@ -4,9 +4,14 @@
 
 <template>
     <div>
-        <router-link to="/">Home</router-link>
+        <router-link to="/">Regresar</router-link>
+        <h1>Pronto disponible!!</h1>
     </div>
 </template>
 
 <style scoped>
+h1{
+    padding: 30px;
+    color: white;
+}
 </style>

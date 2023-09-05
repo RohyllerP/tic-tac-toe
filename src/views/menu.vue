@@ -92,7 +92,7 @@ import ButtonComponent from "@/components/buttons/button-1.vue";
   }
   .main-footer {
     position: relative;
-    top: -40px;
+    top: -45px;
     flex-direction: column;
   }
   .main-footer > div {

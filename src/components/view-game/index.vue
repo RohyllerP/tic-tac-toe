@@ -77,6 +77,14 @@ const reload = () => {
   content.value.lineasFirst.lineaVerticalFirst.dR = false;
   content.value.lineasFirst.lineaVerticalFirst.dL = false;
 };
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  padding: "20px",
+  timer: 2500,
+  timerProgressBar: true,
+});
 const auxName = ref(nameOne.value);
 const messageValidar = () => {
   auxName.value =
@@ -87,14 +95,6 @@ const messageValidar = () => {
     localStorage.setItem("score-2", ++scoreTwo.value);
   }
   auxVal.value = false;
-  const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    padding: "20px",
-    timer: 2500,
-    timerProgressBar: true,
-  });
 
   Toast.fire({
     icon: "success",
@@ -232,6 +232,25 @@ const changeVal = (event) => {
       messageValidar();
       return true;
     }
+    let todosTienenValorNoCero = true;
+
+    for (let i = 0; i < tridimensionArray.length; i++) {
+      for (let j = 0; j < tridimensionArray[i].length; j++) {
+        if (tridimensionArray[i][j].valor === 0) {
+          todosTienenValorNoCero = false;
+          break;
+        }
+      }
+    }
+    if (todosTienenValorNoCero) {
+      Toast.fire({
+        icon: "error",
+        title: "Empate",
+      });
+      setTimeout(() => {
+        reload();
+      }, 2500);
+    }
   })();
 };
 </script>
@@ -253,18 +272,18 @@ const changeVal = (event) => {
       <h1 class="title-not">No hay jugadores registrados, regresa al menú</h1>
     </div>
     <div class="footer">
-        <div class="score">
-          <p>Score {{ nameOne }}: {{ score }}</p>
-        </div>
-        <div class="score">
-          <p>Score {{ nameTwo }}: {{ scoreTwo }}</p>
-        </div>
+      <div class="score">
+        <p>Score {{ nameOne }}: {{ score }}</p>
       </div>
+      <div class="score">
+        <p>Score {{ nameTwo }}: {{ scoreTwo }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.todo-div{
+.todo-div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -280,7 +299,7 @@ const changeVal = (event) => {
   padding-right: 80px;
   gap: 20px;
   position: relative;
-  top: -24px;
+  top: -25.5px;
 }
 
 .score {
@@ -313,8 +332,8 @@ h3 {
     font-size: 18px;
   }
   .footer {
-  top: -63px;
-}
+    top: -63px;
+  }
 }
 @media screen and (max-width: 400px) {
 }
