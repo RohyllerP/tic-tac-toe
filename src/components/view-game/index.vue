@@ -280,7 +280,7 @@ const changeVal = (event) => {
   padding-right: 80px;
   gap: 20px;
   position: relative;
-  top: -50px;
+  top: -24px;
 }
 
 .score {
@@ -312,6 +312,9 @@ h3 {
   .score > p {
     font-size: 18px;
   }
+  .footer {
+  top: -63px;
+}
 }
 @media screen and (max-width: 400px) {
 }
