@@ -135,7 +135,7 @@ const changeVal = (event) => {
             break;
           case "2x1":
             content.value.lineasFirst.lineaVerticalFirst.left = "49%";
-             content.value.lineasFirst.lineaVerticalFirst.ltMe = true;
+            content.value.lineasFirst.lineaVerticalFirst.ltMe = true;
             break;
           case "3x1":
             content.value.lineasFirst.lineaVerticalFirst.left = "84%";
@@ -237,42 +237,50 @@ const changeVal = (event) => {
 </script>
 
 <template>
-  <div class="div-a">
-    <router-link to="/friend">Regresar</router-link>
-  </div>
-  <div class="div-main" v-if="aux">
-    <div class="players">
-      <h3>Turno de: {{ auxName }}</h3>
+  <div class="todo-div">
+    <div class="div-a">
+      <router-link to="/friend">Regresar</router-link>
     </div>
-    <div class="linea">
-      <Linea ref="content" @handleClick="changeVal" />
+    <div class="div-main" v-if="aux">
+      <div class="players">
+        <h3>Turno de: {{ auxName }}</h3>
+      </div>
+      <div class="linea">
+        <Linea ref="content" @handleClick="changeVal" />
+      </div>
+    </div>
+    <div v-else>
+      <h1 class="title-not">No hay jugadores registrados, regresa al menú</h1>
     </div>
     <div class="footer">
-      <div class="score">
-        <p>Score {{ nameOne }}: {{ score }}</p>
+        <div class="score">
+          <p>Score {{ nameOne }}: {{ score }}</p>
+        </div>
+        <div class="score">
+          <p>Score {{ nameTwo }}: {{ scoreTwo }}</p>
+        </div>
       </div>
-      <div class="score">
-        <p>Score {{ nameTwo }}: {{ scoreTwo }}</p>
-      </div>
-    </div>
-  </div>
-  <div v-else>
-    <h1 class="title-not">No hay jugadores registrados, regresa al menú</h1>
   </div>
 </template>
 
 <style scoped>
+.todo-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 .title-not {
   color: white;
   padding-left: 30px;
 }
 .footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-top: 30px;
   padding-right: 80px;
-  gap: 40px;
+  gap: 20px;
+  position: relative;
+  top: -35px;
 }
 
 .score {
@@ -302,7 +310,7 @@ h3 {
 }
 @media screen and (max-width: 600px) {
   .score > p {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 400px) {
