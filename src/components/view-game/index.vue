@@ -68,6 +68,14 @@ const reload = () => {
   content.value.lineasFirst.lineaVerticalFirst.display = "none";
   auxImg.value = !auxImg.value;
   content.value.lineasFirst.lineaVerticalFirst.left = "0%";
+  content.value.lineasFirst.lineaVerticalFirst.tpTp = false;
+  content.value.lineasFirst.lineaVerticalFirst.tpBm = false;
+  content.value.lineasFirst.lineaVerticalFirst.tpMe = false;
+  content.value.lineasFirst.lineaVerticalFirst.ltTp = false;
+  content.value.lineasFirst.lineaVerticalFirst.ltMe = false;
+  content.value.lineasFirst.lineaVerticalFirst.ltBm = false;
+  content.value.lineasFirst.lineaVerticalFirst.dR = false;
+  content.value.lineasFirst.lineaVerticalFirst.dL = false;
 };
 const auxName = ref(nameOne.value);
 const messageValidar = () => {
@@ -123,12 +131,15 @@ const changeVal = (event) => {
         switch (fila[0].id) {
           case "1x1":
             content.value.lineasFirst.lineaVerticalFirst.left = "16%";
+            content.value.lineasFirst.lineaVerticalFirst.ltTp = true;
             break;
           case "2x1":
             content.value.lineasFirst.lineaVerticalFirst.left = "49%";
+             content.value.lineasFirst.lineaVerticalFirst.ltMe = true;
             break;
           case "3x1":
             content.value.lineasFirst.lineaVerticalFirst.left = "84%";
+            content.value.lineasFirst.lineaVerticalFirst.ltBm = true;
             break;
         }
         content.value.lineasFirst.lineaVerticalFirst.display = "block";
@@ -152,11 +163,6 @@ const changeVal = (event) => {
         tridimensionArray[0][i].valor === tridimensionArray[1][i].valor &&
         tridimensionArray[1][i].valor === tridimensionArray[2][i].valor
       ) {
-        content.value.lineasFirst.lineaVerticalFirst.tpTp = false;
-        content.value.lineasFirst.lineaVerticalFirst.tpBm = false;
-        content.value.lineasFirst.lineaVerticalFirst.tpMe = false;
-        content.value.lineasFirst.lineaVerticalFirst.dR = false;
-        content.value.lineasFirst.lineaVerticalFirst.dL = false;
         switch (tridimensionArray[0][i].id) {
           case "1x1":
             content.value.lineasFirst.lineaVerticalFirst.top = "-205px";
@@ -191,11 +197,7 @@ const changeVal = (event) => {
       tridimensionArray[0][0].valor === tridimensionArray[1][1].valor &&
       tridimensionArray[1][1].valor === tridimensionArray[2][2].valor
     ) {
-      content.value.lineasFirst.lineaVerticalFirst.tpTp = false;
-      content.value.lineasFirst.lineaVerticalFirst.tpBm = false;
-      content.value.lineasFirst.lineaVerticalFirst.tpMe = false;
       content.value.lineasFirst.lineaVerticalFirst.dR = true;
-      content.value.lineasFirst.lineaVerticalFirst.dL = false;
       content.value.lineasFirst.lineaVerticalFirst.height = "520px";
       content.value.lineasFirst.lineaVerticalFirst.left = "45%";
       content.value.lineasFirst.lineaVerticalFirst.top = "-111px";
@@ -216,10 +218,6 @@ const changeVal = (event) => {
       tridimensionArray[0][2].valor === tridimensionArray[1][1].valor &&
       tridimensionArray[1][1].valor === tridimensionArray[2][0].valor
     ) {
-      content.value.lineasFirst.lineaVerticalFirst.tpTp = false;
-      content.value.lineasFirst.lineaVerticalFirst.tpBm = false;
-      content.value.lineasFirst.lineaVerticalFirst.tpMe = false;
-      content.value.lineasFirst.lineaVerticalFirst.dR = false;
       content.value.lineasFirst.lineaVerticalFirst.dL = true;
       content.value.lineasFirst.lineaVerticalFirst.height = "520px";
       content.value.lineasFirst.lineaVerticalFirst.left = "48%";
@@ -308,8 +306,5 @@ h3 {
   }
 }
 @media screen and (max-width: 400px) {
-  .div-main {
-    display: none;
-  }
 }
 </style>

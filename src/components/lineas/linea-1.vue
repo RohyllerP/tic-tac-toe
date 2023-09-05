@@ -16,14 +16,17 @@ let firstFirst = reactive([
 // cambiar variables por redimensión
 let lineasFirst = reactive({
   lineaVerticalFirst: {
-    left: "0%",
-    top: "0px",
-    display: "none",
-    rotate: "0deg",
+    left: "50%",
+    top: "-100px",
+    display: "block",
+    rotate: "90deg",
     height: "520px",
     tpTp: false,
     tpBm: false,
-    tpMe: false,
+    tpMe: true,
+    ltTp: false,
+    ltMe: false, 
+    ltBm: false,
     dR: false,
     dL: false
   },
@@ -165,13 +168,13 @@ const changeVal = (event) => {
     grid-template-columns: repeat(3, 105px);
   }
   .linea:before{
-    top: v-bind("lineasFirst.lineaVerticalFirst.tpTp ? "-105px" : lineasFirst.lineaVerticalFirst.tpBm ? "104px" : lineasFirst.lineaVerticalFirst.tpMe ? "0px" : lineasFirst.lineaVerticalFirst.dR ? "-40px" : lineasFirst.lineaVerticalFirst.dL ? "-35px" : lineasFirst.lineaVerticalFirst.top");
-    height: v-bind("lineasFirst.lineaVerticalFirst.tpTp || lineasFirst.lineaVerticalFirst.tpBm || lineasFirst.lineaVerticalFirst.tpMe  || lineasFirst.lineaVerticalFirst.dR || lineasFirst.lineaVerticalFirst.dL ? "382px" : lineasFirst.lineaVerticalFirst.height");
-    transform: rotate(v-bind("lineasFirst.lineaVerticalFirst.dR ? "130deg" : lineasFirst.lineaVerticalFirst.dL ? "-135deg"  : lineasFirst.lineaVerticalFirst.rotate"));
+    top: v-bind("lineasFirst.lineaVerticalFirst.tpTp ? "-105px" : lineasFirst.lineaVerticalFirst.tpBm ? "104px" : lineasFirst.lineaVerticalFirst.tpMe ? "0px" : lineasFirst.lineaVerticalFirst.dR ? "-34px" : lineasFirst.lineaVerticalFirst.dL ? "-24px" : lineasFirst.lineaVerticalFirst.ltTp  ?  "16%" : lineasFirst.lineaVerticalFirst.ltMe ?  "49%" : lineasFirst.lineaVerticalFirst.ltBm ? "84%" :  lineasFirst.lineaVerticalFirst.top");
+    height: v-bind("lineasFirst.lineaVerticalFirst.tpTp || lineasFirst.lineaVerticalFirst.tpBm || lineasFirst.lineaVerticalFirst.tpMe   ? "322px" : lineasFirst.lineaVerticalFirst.dR ? "364px" : lineasFirst.lineaVerticalFirst.dL ? "363px" : lineasFirst.lineaVerticalFirst.ltTp  ?  "342px" : lineasFirst.lineaVerticalFirst.ltMe ?  "382px" : lineasFirst.lineaVerticalFirst.ltBm ? "382px"  : lineasFirst.lineaVerticalFirst.height");
+    transform: rotate(v-bind("lineasFirst.lineaVerticalFirst.dR ? "134deg" : lineasFirst.lineaVerticalFirst.dL ? "-135deg"  : lineasFirst.lineaVerticalFirst.rotate"));
   }
   .p-div-line .img-line {
     width: 70px;
-    top: 40px;
+    top: 15px;
     right: 14px;
   }
 }
