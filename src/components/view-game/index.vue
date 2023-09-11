@@ -243,6 +243,11 @@ const changeVal = (event) => {
       }
     }
     if (todosTienenValorNoCero) {
+      for (let i = 0; i < tridimensionArray.length; i++) {
+        for (let j = 0; j < tridimensionArray[i].length; j++) {
+          tridimensionArray[i][j].valor = 0;
+        }
+      }
       Toast.fire({
         icon: "error",
         title: "Empate",
